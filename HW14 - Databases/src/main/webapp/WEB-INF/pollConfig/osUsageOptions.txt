@@ -1,0 +1,6 @@
+Windows 10	https://www.microsoft.com/en-us/windows/features
+Windows 8.1	https://www.microsoft.com/en-us/windows/windows-10-upgrade
+Windows 8	https://www.microsoft.com/en-us/software-download/windows10
+Windows 7	https://www.microsoft.com/en-us/windows/windows-10-upgrade
+Mac OS X	http://www.apple.com/osx/
+Linux	https://www.elementary.io/

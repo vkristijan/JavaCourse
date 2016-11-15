@@ -1,0 +1,10 @@
+Automatika	http://www.fer.unizg.hr/modul/automatika
+Elektroenergetika	http://www.fer.unizg.hr/modul/elektroenergetika
+Elektroničko i računalno inženjerstvo	http://www.fer.unizg.hr/modul/elektronicko_i_racunalno_inzenjerstvo
+Elektronika	http://www.fer.unizg.hr/modul/elektronika	
+Radiokomunikacijske tehnologije	http://www.fer.unizg.hr/modul/radiokomunikacije
+Obrada informacija	http://www.fer.unizg.hr/modul/obradba_informacija
+Programsko inženjerstvo i informacijski sustavi	http://www.fer.unizg.hr/modul/programsko_inzenjerstvo
+Računalno inženjerstvo	http://www.fer.unizg.hr/modul/racunalno_inzenjerstvo
+Računarska znanost	http://www.fer.unizg.hr/modul/racunarska_znanost
+Telekomunikacije i informatika	http://www.fer.unizg.hr/modul/telekomunikacije_i_informatika

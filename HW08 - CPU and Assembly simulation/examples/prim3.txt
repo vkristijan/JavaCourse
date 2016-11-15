@@ -1,0 +1,72 @@
+#program ucitava cijeli broj n sa tipkovnice i ispisuje n-ti fibonaccijev broj
+
+@ulaz:			call @write					;ucitavanje broja n
+				iinput @vrijednost
+				jumpIfTrue @nastavak
+				call @errWrite
+				jump @ulaz
+
+@nastavak:		load r0, @vrijednost
+				push r0
+				echo r0
+				call @fibonacci
+				pop r0
+				
+				load r1, @tekst
+				echo r1
+				echo r0
+				
+				halt
+
+#funkcija kao argument uzima broj n, koji je zadnje dodan na stogu 
+#i na stog vraca vrijednost n-tog fibonaccijevog broja
+@fibonacci:		pop r0						;program counter
+				pop r1						;broj n
+				push r0						;vrati PC na stog
+				
+				move r2, 0					;nulti broj je 0 (kraj rekurzije)
+				testEquals r1, r2
+				jumpIfTrue @return
+				
+				move r2, 1					;prvi broj je 1 (kraj rekurzije)
+				testEquals r1, r2
+				jumpIfTrue @return
+				
+				decrement r1				;fib(n) = fib(n - 1) + fib(n - 2)
+				push r1
+				decrement r1
+				push r1
+				
+				call @fibonacci				;izracunaj fib(n - 1)
+				pop r0						;sa stoga skini izracunatu vrijednost i (n - 2)
+				pop r1	
+				push r0						;vrati ih u obrnutom redoslijedu
+				push r1
+				call @fibonacci
+				
+				pop r1
+				pop r2
+				
+				add r1, r1, r2				;zbroji fib(n-1) i fib(n-2)
+				
+@return:		pop r0
+				push r1
+				push r0	
+				ret				
+			
+
+@write:			load r0, @poruka
+				echo r0
+				ret
+			
+@errWrite:		load r0, @errPoruka
+				echo r0
+				ret
+			
+@poruka:		DEFSTR "Unesite broj: "
+@errPoruka:		DEFSTR "Unos nije moguće protumačiti kao cijeli broj.\n"
+@vrijednost:	DEFINT 100
+@enter:			DEFSTR "\n"
+@tekst:			DEFSTR ". fibonaccijev broj: "
+				RESERVE:70
+@stackTop:		RESERVE

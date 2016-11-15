@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="js/htmlescaping.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<title>
+		Photo gallery
+	</title>
+
+	<script type="text/javascript"><!--
+		$(document).ready(function() {
+			var xmlhttp;
+			
+			if (window.XMLHttpRequest) {
+				xmlhttp=new XMLHttpRequest();
+			} else {
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			
+			xmlhttp.onreadystatechange = function() {
+				if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+					var text = xmlhttp.responseText;
+					var pictures = JSON.parse(text);
+					var html = "";
+					if(pictures.length==0) {
+						html = "Nema rezultata...";
+					} else {
+						for(var i=0; i<pictures.length; i++) {
+							html += "<button class='button' onclick=\"loadCategory('"  + pictures[i] + "');\">" + htmlEscape(pictures[i]) + " </button>";
+						}
+					}
+					document.getElementById("categories").innerHTML = html;
+				}
+			}
+			xmlhttp.open("GET", "servlets/categories?dummy=" + Math.random(), true);
+			xmlhttp.send();
+		});
+
+
+		function loadCategory(categoryName){
+			var xmlhttp;
+			
+			if (window.XMLHttpRequest) {
+				xmlhttp=new XMLHttpRequest();
+			} else {
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			
+			xmlhttp.onreadystatechange = function() {
+				if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+					var text = xmlhttp.responseText;
+					var pictures = JSON.parse(text);
+					var html = "";
+					if(pictures.length==0) {
+						html = "Nema rezultata...";
+					} else {
+						var count = 0;
+
+						while (count < pictures.length){
+							for(var i = 0; i < 3 && count < pictures.length; i++) {
+								html += "<div id='thumbnail'>";
+								html += "<img src='servlets/thumbnail?name=" + pictures[count].fileName + "'";
+								html += "onclick=\"showImage('"+ pictures[count].fileName + "', '" + 
+																 pictures[count].description + "', '" + 
+																 pictures[count].categories + "')\"";
+								html += "/></div>";
+								count++;
+							}
+						}
+					}
+					document.getElementById("thumbnails").innerHTML = html;
+				}
+			}
+			xmlhttp.open("GET", "servlets/selectedCategory?categoryName=" + categoryName + "&dummy=" + Math.random(), true);
+			xmlhttp.send();
+		}
+
+		function showImage(fileName, description, categories){
+			var html = "<img src='servlets/getImage?imgName=" + fileName + "' width=1080 height=720 />";
+			html += "<h1>" + description + "</h1>";
+
+			var splitted = categories.split(",");
+			for(var i = 0; i < splitted.length; i++) {
+				html += "<div id='category'>";
+				html += splitted[i];
+				html += "</div>";
+			}
+
+			document.getElementById("picture").innerHTML = html;
+		}
+
+	//--></script>
+</head>
+
+<body>
+	<div id="picture"> &nbsp; </div>
+	<div id="categories"> &nbsp; </div>
+	<div id="thumbnails"> &nbsp; </div>
+</body>
+
+</html>

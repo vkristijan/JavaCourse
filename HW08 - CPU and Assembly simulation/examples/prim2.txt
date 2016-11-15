@@ -1,0 +1,41 @@
+#program ucitava cijeli broj sa tipkovnice i ispisuje sljedecih 5 brojeva
+
+@ulaz:			call @write
+				iinput @vrijednost
+				jumpIfTrue @nastavak
+				call @errWrite
+				jump @ulaz
+
+@nastavak:		move r1, 5
+				move r2, 0
+				load r3, @vrijednost
+				load r0, @tekst
+				echo r0
+				load r0, @enter
+
+@petlja:		testEquals r1, r2
+				jumpIfTrue @kraj
+				
+				increment r3
+				decrement r1
+				echo r3
+				echo r0
+				jump @petlja
+				
+@kraj:			halt
+
+@write:			load r0, @poruka
+				echo r0
+				ret
+			
+@errWrite:		load r0, @errPoruka
+				echo r0
+				ret
+			
+@poruka:		DEFSTR "Unesite početni broj: "
+@errPoruka:		DEFSTR "Unos nije moguće protumačiti kao cijeli broj.\n"
+@vrijednost:	DEFINT 42
+@enter:			DEFSTR "\n"
+@tekst:			DEFSTR "Sljedećih 5 brojeva je:\n"
+				RESERVE:19
+@stackTop:		RESERVE
