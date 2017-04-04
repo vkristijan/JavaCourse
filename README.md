@@ -1,35 +1,35 @@
-#JavaCourse
+# JavaCourse
 Homeworks from the Introduction to Java programming language course.
 
-##Homework 1 - Introduction to Java
+## Homework 1 - Introduction to Java
 Solved six simple problems using Java.
 
-##Homework 2 - Introduction to OOP - Classes
+## Homework 2 - Introduction to OOP - Classes
 Created a class that is used as a collection interface and a linked list implementation. 
 Created a stack from that linked list using the **Adapter design pattern**.
 
-##Homework 3 - Lexer and Parser
+## Homework 3 - Lexer and Parser
 * Created a simple lexer with unit test as an example.
 * Created a **lexer and parser for a script language** called SmartScript
 
-##Homework 4 - Introduction to OOP - Inheritance and Polymorphism
+## Homework 4 - Introduction to OOP - Inheritance and Polymorphism
 * Created another implementation of the String class.
     * Using an unmodifiable char array to store the characters.
     * Creating **substrings in O(1)** by using the same character array.
     * Using **Rabin-Karp algorithm** to implement the find method in O(n).
 * Created a simple raster drawing app that can draw circles, quadriterals and triangles.
 
-##Homework 5 - Simple Hash Table
+## Homework 5 - Simple Hash Table
 Implemented a simple hash table collection. The hash table uses linked lists in case of multiple values having the same hash code.
 Implemented the Iterator design pattern.
 
-##Homework 6 - Collections
+## Homework 6 - Collections
 * Implemented an IntegerStorage collection that uses the **Observer design pattern**.
 * Created a **generic** collection that can return the median of the elements in it.
 * Created an iterable prime number collection that has a givne number of elements and is able to iterate througt them, without storing them in memory.
 * Created a multistack collection that acts as a map and allows to store multiple values with the same key.
 
-##Homework 7 - Files
+## Homework 7 - Files
 * Created a console application that can:
     * calculate the **SHA checksum** of a file and check if it is the same as expectd.
     * **encrypt** a file **using AES** crypto-algorithm
@@ -47,21 +47,21 @@ Implemented the Iterator design pattern.
     * mkdir - creates a folder
     * tree - prints a hierarchical view of everything in the current folder and all it's subfolders.
 
-##Homework 8 - CPU and Assembly simulation
+## Homework 8 - CPU and Assembly simulation
 Created a simulation of a CPU writen in Java that is able to execute an assembly language created just for this simulation.
 Created a few assembly programms like a recursive fibonacci calculation to test everything. 
 Using **mockito for unit tests**.
 
-##Homework 9 - Parallelization
+## Homework 9 - Parallelization
 * Created a program that draws fractals using Newton-Raphson iteration.
 * Created a ray-tracer for rendering of 3D scenes.
 
-##Homework 10 - Swing
+## Homework 10 - Swing
 * Created a custom layout manager.
 * Created a calculator app that supports stack operations.
 * Created an app that can create and display bar charts.
 
-##Homework 11 - Simple text editor
+## Homework 11 - Simple text editor
 Created a simpe Notepad++ clone with the following features:
 
 * create new document
@@ -84,7 +84,7 @@ All features are available from:
 The application is translated into 3 languages: English, Croatian and German. 
 The **internationalization** is done in such a way to enable the user to change the language while using the application, and still enabling the garbage collector to remove unused objects.
 
-##Homework 12 - Webserver
+## Homework 12 - Webserver
 Created a webserver that is able to:
 
 * handle HTTP requests
@@ -95,7 +95,7 @@ Created a webserver that is able to:
 
  Used the **Visitor design pattern** and **Composite design pattern** in order to create the engine to execute SmartScript scripts.
 
-##Homework 13 - Java Server pages
+## Homework 13 - Java Server pages
 Created a few simple web pages with the following options:
 
 * Change the background color
@@ -104,11 +104,11 @@ Created a few simple web pages with the following options:
 * Create a report for a survey about OS usages with dynamically created charts.
 * Calculate powers of a given number and download the result as a Microsoft Office Excel document.
 
-##Homework 14 - Databases
+## Homework 14 - Databases
 Created a database and an web application for surveys. 
 After voting for something in the survey, the app displays the results in a table, displays a pie chart with the result data and allows the user to download the votes as a Microsoft Office Excel document.
 
-##Homework 15 - Java Persistence API
+## Homework 15 - Java Persistence API
 Created a web application for a blog using **hibernate** with second level cashing.
 The app allows:
 
@@ -118,12 +118,12 @@ The app allows:
 * Editing a blog post
 * Commenting a blog post
 
-##Homework 16.1 - Search engine
+## Homework 16.1 - Search engine
 Created a **search engine** and a console application that enables the user to use it.
 The search engine searches through documents that are in a folder that is given as an argument while starting the application.
 The console application allows teh user to search for a given phrase and see the most relevant results. He is also able to ead the whole document in the console.
 
-##Homework 16.2 - Paint
+## Homework 16.2 - Paint
 Created a paint application with the following options:
 
 * Choosing the background and foreground color
@@ -134,10 +134,10 @@ Created a paint application with the following options:
 * Opening pictures
 * Editing objects
 
-##Homework 17 - Android
+## Homework 17 - Android
 Created a simple calculator app that supports sending error reports using e-mail.
 
-##Homewprk 18 - Frontend technologies
+## Homewprk 18 - Frontend technologies
 Created a single page application for a picture gallery. 
 All pictures are categorized and a single picture can be in multiple categories. 
 Used technologies:
